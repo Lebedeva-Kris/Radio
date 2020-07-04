@@ -25,7 +25,7 @@ public class Radio {
         return soundVolume;
     }
     public void setSoundVolume(int soundVolume) {
-        if (soundVolume >= 0 && soundVolume < 10) {
+        if (soundVolume > 0 && soundVolume < 10) {
             soundVolume++;
         } else if (soundVolume == 10) {
             soundVolume = 10;
