@@ -46,14 +46,14 @@ public class Radio {
 
     public void nextRadioStation() {
         if (currentRadioStation == maxRadioStation) {
-            currentRadioStation = 0;
+            currentRadioStation = minRadioStation;
             return;
         } this.currentRadioStation++;
     }
 
     public void prevRadioStation() {
         if (currentRadioStation == minRadioStation) {
-            currentRadioStation = 10;
+            currentRadioStation = maxRadioStation;
             return;
         } this.currentRadioStation--;
     }
