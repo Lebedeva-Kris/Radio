@@ -3,10 +3,10 @@ package ru.netology;
 public class Radio {
     private int currentRadioStation = 5;
     private int minRadioStation = 0;
-    private int maxRadioStation;
+    private int maxRadioStation = 10;
     private int currentSoundVolume = 50;
     private int minSoundVolume = 0;
-    private int maxSoundVolume;
+    private int maxSoundVolume = 100;
 
     public Radio() {
     }
