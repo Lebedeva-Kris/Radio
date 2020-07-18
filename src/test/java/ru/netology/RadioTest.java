@@ -1,16 +1,16 @@
 package ru.netology;
 
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class RadioTest {
-
     @Test
     void shouldSwitchNextRadioStation() {
         Radio radio = new Radio(5);
         int radioStationBeforeNext = radio.getCurrentRadioStation();
         radio.nextRadioStation();
-        assertEquals(radioStationBeforeNext+1, radio.getCurrentRadioStation());
+        assertEquals(radioStationBeforeNext + 1, radio.getCurrentRadioStation());
     }
 
     @Test
@@ -22,11 +22,19 @@ public class RadioTest {
     }
 
     @Test
+    void shouldSwitchRadioMoreThanMax() {
+        Radio radio = new Radio(12);
+        radio.setCurrentRadioStation(radio.getCurrentRadioStation());
+        radio.nextRadioStation();
+        assertEquals(0, radio.getCurrentRadioStation());
+    }
+
+    @Test
     void shouldSwitchPrevRadioStation() {
         Radio radio = new Radio(5);
         int radioStationBeforePrev = radio.getCurrentRadioStation();
         radio.prevRadioStation();
-        assertEquals(radioStationBeforePrev-1, radio.getCurrentRadioStation());
+        assertEquals(radioStationBeforePrev - 1, radio.getCurrentRadioStation());
     }
 
     @Test
@@ -38,11 +46,19 @@ public class RadioTest {
     }
 
     @Test
+    void shouldSwitchRadioLessThanMin() {
+        Radio radio = new Radio(-1);
+        radio.setCurrentRadioStation(radio.getCurrentRadioStation());
+        radio.prevRadioStation();
+        assertEquals(10, radio.getCurrentRadioStation());
+    }
+
+    @Test
     void shouldVolumeUp() {
         Radio radio = new Radio();
         int soundVolumeBeforeUp = radio.getCurrentSoundVolume();
         radio.volumeUp();
-        assertEquals(soundVolumeBeforeUp+1, radio.getCurrentSoundVolume());
+        assertEquals(soundVolumeBeforeUp + 1, radio.getCurrentSoundVolume());
     }
 
     @Test
@@ -58,7 +74,7 @@ public class RadioTest {
         Radio radio = new Radio();
         int soundVolumeBeforeDown = radio.getCurrentSoundVolume();
         radio.volumeDown();
-        assertEquals(soundVolumeBeforeDown-1, radio.getCurrentSoundVolume());
+        assertEquals(soundVolumeBeforeDown - 1, radio.getCurrentSoundVolume());
     }
 
     @Test
