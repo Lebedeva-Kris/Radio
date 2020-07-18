@@ -1,23 +1,20 @@
 package ru.netology;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 public class Radio {
     private int currentRadioStation;
     private int minRadioStation = 0;
     private int maxRadioStation = 10;
-    private int currentSoundVolume = 50;
+    private int currentSoundVolume;
     private int minSoundVolume = 0;
     private int maxSoundVolume = 100;
 
-    public Radio() {
-    }
-
-    public Radio(int currentRadioStation) {
-        this.currentRadioStation = currentRadioStation;
-    }
-
-    public int getCurrentRadioStation() {
-        return currentRadioStation;
-    }
 
     public void setCurrentRadioStation(int currentRadioStation) {
         if (currentRadioStation > maxRadioStation) {
@@ -27,24 +24,6 @@ public class Radio {
             return;
         }
         this.currentRadioStation = currentRadioStation;
-    }
-
-
-    public int getMinRadioStation() {
-        return minRadioStation;
-    }
-
-    public void setMinRadioStation(int minRadioStation) {
-        this.minRadioStation = minRadioStation;
-    }
-
-
-    public int getMaxRadioStation() {
-        return maxRadioStation;
-    }
-
-    public void setMaxRadioStation(int maxRadioStation) {
-        this.maxRadioStation = maxRadioStation;
     }
 
 
@@ -64,32 +43,6 @@ public class Radio {
         this.currentRadioStation--;
     }
 
-
-    public int getCurrentSoundVolume() {
-        return currentSoundVolume;
-    }
-
-    public void setCurrentSoundVolume(int currentSoundVolume) {
-        this.currentSoundVolume = currentSoundVolume;
-    }
-
-
-    public int getMinSoundVolume() {
-        return minSoundVolume;
-    }
-
-    public void setMinSoundVolume(int minSoundVolume) {
-        this.minSoundVolume = minSoundVolume;
-    }
-
-
-    public int getMaxSoundVolume() {
-        return maxSoundVolume;
-    }
-
-    public void setMaxSoundVolume(int maxSoundVolume) {
-        this.maxSoundVolume = maxSoundVolume;
-    }
 
     public void volumeUp() {
         if (currentSoundVolume == maxSoundVolume) {
