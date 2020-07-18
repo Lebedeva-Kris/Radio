@@ -8,7 +8,7 @@ public class Radio {
     private int minSoundVolume = 0;
     private int maxSoundVolume = 100;
 
-    public Radio() {
+    public Radio(int maxRadioStation) {
     }
     public Radio(int maxRadioStation, int maxSoundVolume) {
         this.maxRadioStation = maxRadioStation;
